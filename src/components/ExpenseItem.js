@@ -1,13 +1,14 @@
+import "./ExpenseItem.css";
 function ExpenseItem() {
     return (
-        <>
-            <div>15 August 2023</div>
-            <p>Book - <span>$10</span></p>
-            <p>Food - $5</p>
-            <p>Petrol - $20</p>
-            <p>Movie - $10</p>
-            <div>Delhi</div>
-        </>
+        <div className="expense-item">
+            <div>15 August 2023 </div>
+            <p className="expense-item__description"> Book - <span className="expense-item__price">$10</span></p>
+            <p className="expense-item__description">Food - <span className="expense-item__price">$5</span></p>
+            <p className="expense-item__description">Petrol - <span className="expense-item__price">$20</span></p>
+            <p className="expense-item__description">Movie - <span className="expense-item__price">$10</span></p>
+            <div className="expense-item__location">Delhi</div>
+        </div>
     );
 }
 
