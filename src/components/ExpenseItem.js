@@ -12,6 +12,9 @@ function ExpenseItem(props) {
             <p className="expense-item__description">Petrol<span className="expense-item__price">$20</span></p>
             <p className="expense-item__description">Movie<span className="expense-item__price">$10</span></p>
             <div className="expense-item__location">{props.location}</div>
+            <button onClick={()=>{
+                console.log("Button clicked")
+            }}>Change Title</button>
         </Card>
     );
 }
