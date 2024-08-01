@@ -1,5 +1,6 @@
 import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense.js";
 
 function App() {
   const expenses = [
@@ -36,6 +37,7 @@ function App() {
     <div>
       <h1>Let's get Started</h1>
       <p>I am learning React</p>
+      <NewExpense/>
 
       {/* <ExpenseItem date={new Date(2023, 7, 15)} title="Insurance" price="50" location="Bangalore" />
       
