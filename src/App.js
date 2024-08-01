@@ -1,9 +1,9 @@
-import ExpenseItem from "./components/ExpenseItem";
+import { useState } from "react";
 import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense.js";
 
 function App() {
-  const expenses = [
+  const [expenses, setExpense]=useState([
     {
       id: "1",
       date: new Date(2023, 7, 15),
@@ -32,12 +32,18 @@ function App() {
       price: 200,
       location: "Mumbai",
     },
-  ];
+  ]);
+  
+  const addNewDataHandler=(data)=>{
+    setExpense((prevData)=>{
+      return [...prevData,data];
+    });
+  };
   return (
     <div>
       <h1>Let's get Started</h1>
       <p>I am learning React</p>
-      <NewExpense/>
+      <NewExpense onAddNewData={addNewDataHandler}/>
 
       {/* <ExpenseItem date={new Date(2023, 7, 15)} title="Insurance" price="50" location="Bangalore" />
       
