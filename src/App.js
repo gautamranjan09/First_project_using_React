@@ -13,27 +13,27 @@ function App() {
     },
     {
       id: "2",
-      date: new Date(2023, 3, 25),
+      date: new Date(2024, 3, 25),
       title: "Book",
       price: 10,
       location: "Delhi",
     },
     {
       id: "3",
-      date: new Date(2023, 10, 11),
+      date: new Date(2025, 10, 11),
       title: "Pen",
       price: 1,
       location: "Hyderabad",
     },
     {
       id: "4",
-      date: new Date(2023, 1, 14),
+      date: new Date(2024, 1, 14),
       title: "Laptop",
       price: 200,
       location: "Mumbai",
     },
   ]);
-  
+
   const addNewDataHandler=(data)=>{
     setExpense((prevData)=>{
       return [...prevData,data];
@@ -63,7 +63,7 @@ function App() {
       
       <ExpenseItem date={new Date(2023, 1, 14)} title="Laptop" price="200" /> */}
 
-      <Expenses expense={expenses}/>
+      <Expenses expenses={expenses}/>
     </div>
   );
 }
