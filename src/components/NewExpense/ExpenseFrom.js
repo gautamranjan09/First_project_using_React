@@ -6,6 +6,7 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [enteredLocation, setEnteredLocation] = useState("");
+  const [openFrom, setOpenFrom] = useState(true);
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -26,7 +27,7 @@ const ExpenseForm = (props) => {
       title: enteredTitle,
       price: enteredAmount,
       date: new Date(enteredDate),
-      location: enteredLocation
+      location: enteredLocation,
     };
 
     props.onSaveExpenseData(expenseData);
@@ -35,7 +36,15 @@ const ExpenseForm = (props) => {
     setEnteredAmount("");
     setEnteredDate("");
     setEnteredLocation("");
+    setOpenFrom("true");
   };
+
+  if (openFrom)
+    return (
+      <div className="new-expense__actions">
+        <button onClick={() => setOpenFrom(false)}>Add Expense</button>
+      </div>
+    );
 
   return (
     <form onSubmit={fromSubmitHandler}>
@@ -66,7 +75,7 @@ const ExpenseForm = (props) => {
             id="date"
             value={enteredDate}
             min="2023-01-01"
-            max="2024-12-31"
+            max="2025-12-31"
             onChange={dateChangeHandler}
           />
         </div>
@@ -81,6 +90,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={() => setOpenFrom(true)}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
