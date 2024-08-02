@@ -2,6 +2,7 @@ import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 import Card from "./Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesChart from "./ExpensesChart";
 import { useState } from "react";
 
 function Expenses(props) {
@@ -15,6 +16,8 @@ function Expenses(props) {
   return (
     <Card className="expenses">
       <ExpensesFilter onChangeFilter={changeFilterHandler} />
+      <ExpensesChart chartData={filteredExpenses} />
+
       {filteredExpenses.length===0 && <h2 className="expense-list__fallback">No expenses found</h2>}
       {filteredExpenses.map((expense) => {
         return (
