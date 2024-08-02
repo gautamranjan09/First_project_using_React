@@ -2,6 +2,10 @@
   padding: 1rem;
   background-color: rgb(31, 31, 31);
   margin: 2rem auto;
-  width: 80rem;
+  width: 1000rem;
   max-width: 95%;
+}
+.expense-list__fallback{
+  color:aliceblue;
+  text-align: center;
 }

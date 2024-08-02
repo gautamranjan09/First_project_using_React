@@ -9,13 +9,14 @@ function Expenses(props) {
   const changeFilterHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
-  const filteredExpense=props.expenses.filter((expense)=>{
-    return expense.date.getFullYear().toString() == filteredYear;
+  const filteredExpenses=props.expenses.filter((expense)=>{
+    return expense.date.getFullYear().toString() === filteredYear;
   })
   return (
     <Card className="expenses">
       <ExpensesFilter onChangeFilter={changeFilterHandler} />
-      {filteredExpense.map((expense) => {
+      {filteredExpenses.length===0 && <h2 className="expense-list__fallback">No expenses found</h2>}
+      {filteredExpenses.map((expense) => {
         return (
           <ExpenseItem
             key={expense.id}
@@ -26,6 +27,7 @@ function Expenses(props) {
           />
         );
       })}
+      {filteredExpenses.length===1 && <h2 className="expense-list__fallback">Only one expense here. Please add more</h2>}
     </Card>
   );
 }
